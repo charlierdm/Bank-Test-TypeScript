@@ -1,11 +1,16 @@
+import { Transaction } from './transaction'
+
 class Account {
   balance: number;
-  transactionHistory: number[];
+  transactionHistory: object[];
 
   constructor(balance = 0) {
     this.balance = balance;
     this.transactionHistory = [];
   }
-}
 
-module.exports = Account;
+  deposit = (amount: number) => {
+    let transaction = new Transaction(amount, 0, this.balance += amount)
+    this.transactionHistory.push(transaction)
+  }
+}
