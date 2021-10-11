@@ -1,4 +1,4 @@
-import { Transaction } from './transaction'
+let transaction = require('./transaction')
 
 class Account {
   balance: number;
@@ -9,8 +9,8 @@ class Account {
     this.transactionHistory = [];
   }
 
-  deposit = (amount: number) => {
-    let transaction = new Transaction(amount, 0, this.balance += amount)
-    this.transactionHistory.push(transaction)
+  deposit = (amount: number, transaction = Transaction) => {
+    let newTransaction = new transaction(amount, 0, this.balance += amount)
+    this.transactionHistory.push(newTransaction)
   }
 }

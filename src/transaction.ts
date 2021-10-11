@@ -1,4 +1,4 @@
-export class Transaction {
+class Transaction {
   credit: number;
   debit: number;
   balance: number;
@@ -9,3 +9,5 @@ export class Transaction {
     this.balance = balance;
   }
 }
+
+module.exports = Transaction;
