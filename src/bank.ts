@@ -10,7 +10,7 @@ class Transaction {
   }
 }
 
-class Account {
+export class Account {
   balance: number;
   transactionHistory: object[];
 
