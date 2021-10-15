@@ -25,7 +25,7 @@ export class Account {
   }
 
   withdraw = (amount: number, transaction = Transaction) => {
-    let newWithdraw = new transaction(amount, 0, this.balance -= amount)
+    let newWithdraw = new transaction(0, amount, this.balance -= amount)
     this.transactionHistory.push(newWithdraw)
   }
 }
