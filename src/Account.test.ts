@@ -1,4 +1,4 @@
-import { Account } from "./bank";
+import { Account } from './Account'
 
 describe("Account", () => {
   it("initializes with a balance of zero", () => {
