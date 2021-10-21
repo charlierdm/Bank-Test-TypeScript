@@ -4,17 +4,17 @@ class Transaction {
   balance: number;
 
   constructor(credit: number, debit: number, balance: number) {
-    this.credit = credit;
+    this.credit = credit
     this.debit = debit;
     this.balance = balance;
   }
 }
 
 export class Account {
-  balance: number;
-  transactionHistory: object[];
+  public balance: number;
+  public transactionHistory: Transaction[];
 
-  constructor(balance = 0) {
+  constructor(balance: number = 0 ) {
     this.balance = balance;
     this.transactionHistory = [];
   }

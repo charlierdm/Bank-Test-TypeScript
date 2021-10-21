@@ -5,7 +5,7 @@ class Transaction {
         this.balance = balance;
     }
 }
-export class Account {
+class Account {
     constructor(balance = 0) {
         this.deposit = (amount, transaction = Transaction) => {
             let newDeposit = new transaction(amount, 0, this.balance += amount);

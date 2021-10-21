@@ -1,4 +1,4 @@
-import { Account } from "../src/bank";
+import { Account } from "./bank";
 
 describe("Account", () => {
   it("initializes with a balance of zero", () => {
@@ -26,4 +26,12 @@ describe("Account", () => {
     expect(account.transactionHistory.length).toEqual(2)
   });
 
+  it("contains the credit, debit and balance information for each transaction", () => {
+    let account = new Account();
+    account.deposit(30);
+    account.withdraw(20);
+    expect(account.transactionHistory[0].credit).toEqual(30)
+    expect(account.transactionHistory[1].debit).toEqual(20)
+    expect(account.transactionHistory[1].balance).toEqual(10)
+  });
 });
