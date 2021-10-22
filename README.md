@@ -4,7 +4,15 @@
 
 
 
-This is my solution to the Makers Academy Bank Tech Test. I wrote this in TypeScript to learn how to assign types and to create a robust solution that meets the acceptance criteria. Tests are written using Jest and all passing.
+This is my solution to the Makers Academy Bank Tech Test. I wrote this in TypeScript to learn it's fundemental features, whilst building a robust solution that meets the acceptance criteria. Tests are written using Jest and all passing.
+
+## Learning Objectives
+
+* Learn the fundementals of TypeScripts syntax.
+* Assign basic types to class properties and variables.
+* Create an array of objects with an expected class type.
+* Learn how to set up the tsconfig file.
+* Learn how compiling works and how the tsconfig settings alter the resulting files.
 
 
 ## user stories
@@ -46,31 +54,36 @@ from the root dir (bank=test-TypeScript) enter the following into the command li
 ```
 npm i
 ```
-then the following to navigate to the index.html file:
+then the following to navigate to the Account.js
 ```
-$ cd public/
+$ cd compiled/
 ```
-then type the following to open the file in the browser.
-```
-$ open index.html
-```
-
-You can then use the dev tools (assuming your in Chrome) to interact with the app.
-
-To run the tests, from the root dir enter:
-```
-cd src/
-```
-```
-npm test
-```
-
-### Example code
-
+open Account.js, this is where you can interact with the compiled code. For example:
 ```
 let account = new Account();
 account.deposit(100)
 account.deposit(500)
 account.withdraw(400)
-account.printStatement()
+console.log(account.printStatement())
 ```
+to see what you've logged to the console, run the following command:
+```
+$ node Account.js
+```
+The above code logs the users statement to the console:
+
+
+![node-bank-ts](https://user-images.githubusercontent.com/75075773/138429461-a303a76f-b281-4a46-8c53-a215e78458b9.png)
+
+
+To run the tests, from the root dir enter:
+```
+cd src/
+```
+inside the src directory, enter:
+```
+$ npm test
+```
+
+
+
