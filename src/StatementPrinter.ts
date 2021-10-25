@@ -10,10 +10,9 @@ export class StatementPrinter {
   }
 
   formatTransactions = (transactionHistory: Transaction[]) => {
-    const header = 'date || credit || debit || balance'
-    const footer: string[] = transactionHistory.map(transaction => {
-      return `${this.formatDate(transaction.date)} ||${this.formatNumbers(transaction.credit)}||${this.formatNumbers(transaction.debit)}||${this.formatNumbers(transaction.balance).trimEnd()}`;
+    const transactions: string[] = transactionHistory.map(t => {
+      return `${this.formatDate(t.date)} ||${this.formatNumbers(t.credit)}||${this.formatNumbers(t.debit)}||${this.formatNumbers(t.balance).trimEnd()}`;
     })
-    return `${header}\n${footer.reverse().join('\n')}`;
+    return `date || credit || debit || balance\n${transactions.reverse().join('\n')}`;
   }
 }

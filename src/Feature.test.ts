@@ -1,9 +1,9 @@
 import { Account } from './Account'
 
 describe("Account", () => {
-  it("initializes with a balance of zero", () => {
+  it("initializes with no transaction history", () => {
     let account = new Account();
-    expect(account.balance).toEqual(0);
+    expect(account.transactionHistory.length).toEqual(0);
   });
 
   it("can make deposit transactions that update the balance", () => {
