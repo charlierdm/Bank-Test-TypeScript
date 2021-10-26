@@ -39,4 +39,14 @@ describe('Account', () => {
       account.deposit(amount)
     }).toThrowError('Only 2 decimal places permitted e.g £0.99')
   })
+
+  it('prints the users statement', () => {
+    let account = new Account()
+    const amount = 1000
+    const date = new Date("01 14 2023")
+    account.deposit(amount, date)
+    account.printStatement()
+    expect(StatementPrinter).toHaveBeenCalledTimes(1)
+  })
+
 })
