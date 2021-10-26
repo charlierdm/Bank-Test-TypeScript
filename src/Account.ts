@@ -10,9 +10,13 @@ export class Account {
     this.transactionHistory = [];
   }
 
+  amountHasTwoDecimals = (amount: number) => {
+    if (Math.floor(amount * 100) !== amount * 100) throw new Error('Only 2 decimal places permitted e.g £0.99')
+  }
+
   checkUserInput = (amount: number) => {
     if (amount < 0) throw new Error('Please enter an amount more than £0')
-    if (amount.toString().split('.')[1].length > 2) throw new Error('Only 2 decimal places permitted')
+    this.amountHasTwoDecimals(amount)
   }
 
   deposit = (amount: number, date = new Date(), transaction = Transaction) => {
@@ -21,6 +25,7 @@ export class Account {
   }
 
   withdraw = (amount: number, date = new Date(), transaction = Transaction) => {
+    if (amount > this.balance) throw new Error('Not enough funds in your account')
     this.checkUserInput(amount)
     this.transactionHistory.push(new transaction(date, 0, amount, this.balance -= amount))
   }
