@@ -11,8 +11,7 @@ export class Account {
   }
 
   amountHasTwoDecimals(amount: number) {
-    if (Math.floor(amount * 100) !== amount * 100)
-      throw new Error("Only 2 decimal places permitted e.g £0.99");
+    if (Math.floor(amount * 100) !== amount * 100) throw new Error("Only 2 decimal places permitted e.g £0.99");
   }
 
   checkUserInput(amount: number) {
